@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Warming - Understanding Our Changing Climate</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 0;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 3.5em;
+            color: white;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(0);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 5px;
+        }
+
+        .card p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .causes-list, .effects-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .causes-list li, .effects-list li {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 10px 15px;
+            margin: 10px 0;
+            border-radius: 25px;
+            transition: transform 0.2s ease;
+        }
+
+        .effects-list li {
+            background: linear-gradient(45deg, #fd79a8, #e84393);
+        }
+
+        .causes-list li:hover, .effects-list li:hover {
+            transform: scale(1.05);
+        }
+
+        .statistics {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .solution-item {
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .solution-item:hover {
+            transform: scale(1.05);
+        }
+
+        .call-to-action {
+            background: linear-gradient(135deg, #00b894, #00a085);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .image-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .image-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .image-caption {
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .btn {
+            display: inline-block;
+            background: white;
+            color: #00b894;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: white;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            margin-top: 40px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+            
+            .card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌍 Global Warming</h1>
+            <p class="subtitle">Understanding Our Planet's Greatest Environmental Challenge</p>
+        </header>
+
+        <div class="image-section">
+            <div class="image-container">
+                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJQAwQMBIgACEQEDEQH/xAAbAAACAgMBAAAAAAAAAAAAAAAEBQMGAAIHAf/EADwQAAIBAwMCBAMGAwcEAwAAAAECAwAEEQUSITFBEyJRcQYUYTKBkaGxwSNC0QcVM1JD4fBigpLxJTRy/8QAGwEAAwADAQEAAAAAAAAAAAAAAwQFAQIGAAf/xAApEQACAgEEAQQBBAMAAAAAAAABAgADEQQhEyRBUSKBkbHhcRSCMaHw/9oADAMBAAIRAxEAPwDj/mOFyWC8Ln0qSKNmBIViB1wKyJvKR4RZz0PpXiMQ27PNE8UKLYxsWeGQkuyoftFfyol53nLMZdzY8xc4Jpauy9T9CaXt7jSRAC5a2cD7tklEOmvV9CaY2t5FqFkLeeNhbSYzGyEjPuPWkejQz216k0dxFJHIMeKkm+N8dW9B+FOdSjUQsFGCULYY89Bjvmkvk/YqFcyppZX0e4aTJmBjdgGOzI6HsfvqzaNqCwyqXXz8YKgbe9W/SLHyYBYLu2t2yPyHrm1Ni2kOzJWXOMHaeP1pq2urQMx+YrSzCxmHHPZ/Aovla19D1WJdGPPDEZFpxX7n01F7m0aV1VlkVh5Wz+NPrXWoHZYp42BxgvjHp0Hy96fDUd6tkgD7s+ufvop1KJjA6Zqe3vb6UxGQmyGfGhktGrRKlKELbUCz9qFm1y1vLyNI
+
+            <div class="card">
+                <h2>⚡ Primary Causes</h2>
+                <ul class="causes-list">
+                    <li>🏭 Burning fossil fuels (coal, oil, gas)</li>
+                    <li>🌳 Deforestation and land use changes</li>
+                    <li>🏗️ Industrial processes and manufacturing</li>
+                    <li>🚗 Transportation emissions</li>
+                    <li>🐄 Agriculture and livestock farming</li>
+                    <li>🗑️ Waste management and landfills</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>🌡️ Major Effects</h2>
+                <ul class="effects-list">
+                    <li>🧊 Melting ice caps and glaciers</li>
+                    <li>🌊 Rising sea levels</li>
+                    <li>🌀 Extreme weather events</li>
+                    <li>🌵 Droughts and desertification</li>
+                    <li>🐧 Loss of biodiversity</li>
+                    <li>🌾 Food and water security issues</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>💡 Solutions & Actions</h2>
+                <div class="solutions-grid">
+                    <div class="solution-item">
+                        <strong>🔋 Renewable Energy</strong>
+                        <p>Solar, wind, and hydroelectric power</p>
+                    </div>
+                    <div class="solution-item">
+                        <strong>🌱 Reforestation</strong>
+                        <p>Plant trees and protect forests</p>
+                    </div>
+                    <div class="solution-item">
+                        <strong>♻️ Sustainable Living</strong>
+                        <p>Reduce, reuse, recycle</p>
+                    </div>
+                    <div class="solution-item">
+                        <strong>🚊 Green Transportation</strong>
+                        <p>Electric vehicles and public transit</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="image-gallery">
+            <div class="image-card">
+                <img src="https://images.unsplash.com/photo-1569163139394-de44cb5894ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Melting Glaciers">
+                <div class="image-caption">🧊 Melting Glaciers and Ice Caps</div>
+            </div>
+            <div class="image-card">
+                <img src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Industrial Pollution">
+                <div class="image-caption">🏭 Industrial Emissions</div>
+            </div>
+            <div class="image-card">
+                <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Drought Effects">
+                <div class="image-caption">🌵 Drought and Desertification</div>
+            </div>
+            <div class="image-card">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Renewable Energy">
+                <div class="image-caption">🔋 Solar Energy Solutions</div>
+            </div>
+            <div class="image-card">
+                <img src="https://images.unsplash.com/photo-1597149498954-5aaaf5738fcd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Deforestation">
+                <div class="image-caption">🌳 Deforestation Impact</div>
+            </div>
+            <div class="image-card">
+                <img src="https://images.unsplash.com/photo-1569163139394-de44cb5894ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Rising Sea Levels">
+                <div class="image-caption">🌊 Rising Sea Levels</div>
+            </div>
+        </div>
+
+        <div class="statistics">
+            <h2>📊 Key Statistics</h2>
+            <div class="stat-grid">
+                <div class="stat-item">
+                    <span class="stat-number">1.1°C</span>
+                    <p>Global temperature increase since pre-industrial times</p>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">415 ppm</span>
+                    <p>Current atmospheric CO₂ levels</p>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">3.3mm</span>
+                    <p>Annual sea level rise</p>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">36.8 GT</span>
+                    <p>Annual CO₂ emissions globally</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="call-to-action">
+            <h2>🌟 Take Action Today!</h2>
+            <p>Every action counts in the fight against global warming. Start making a difference in your daily life and encourage others to join the movement for a sustainable future.</p>
+            <a href="#" class="btn">Learn More About Climate Action</a>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Global Warming Awareness | Together for a Sustainable Future 🌍</p>
+        </footer>
+    </div>
+
+    <script>
+        // Add some interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate cards on scroll
+            const cards = document.querySelectorAll('.card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+
+            // Add click effect to solution items
+            const solutionItems = document.querySelectorAll('.solution-item');
+            solutionItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1.05)';
+                    }, 150);
+                });
+            });
+
+            // Temperature counter animation
+            const tempElement = document.querySelector('.stat-number');
+            if (tempElement && tempElement.textContent === '1.1°C') {
+                let count = 0;
+                const target = 1.1;
+                const timer = setInterval(() => {
+                    count += 0.1;
+                    if (count <= target) {
+                        tempElement.textContent = count.toFixed(1) + '°C';
+                    } else {
+                        clearInterval(timer);
+                    }
+                }, 100);
+            }
+        });
+    </script>
+</body>
+</html>
