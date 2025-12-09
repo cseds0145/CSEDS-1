@@ -1,0 +1,62 @@
+2.Create a webpage for student profile card:Designing layout using flex box(justify content,align items,flex direction)
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> Student Profile Card</title>
+ <style>
+ body{
+ font-family: Arial, sans-serif;
+ margin: 20px;
+ background: #f9f9f9;
+ }
+ h2{text-align: center;}
+ .container{
+ display: flex; 
+ flex-direction: row;  justify-content: center; 
+ align-items: center; 
+ gap: 20px; 
+ flex-wrap: wrap; 
+ }
+ .card{
+ background: #fff;
+ border-radius: 8px;
+ box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+ width: 220px;
+ text-align: center;
+ padding: 16px;
+ }
+ .avatar{
+ width: 70px; height: 70px;
+ background: #007bff; color: #fff;
+ border-radius: 50%;
+ display: flex; justify-content: center; align-items: center;
+ font-size: 20px; margin: 0 auto 12px;
+ }
+ </style>
+</head>
+<body>
+ <h2>Student Profile Cards</h2>
+ <div class="container">
+ <div class="card">
+ <div class="avatar">JK</div>
+ <div class="name">Aman</div>
+ <div class="detail">B.Tech - CSE</div>
+ <div class="detail">Roll No: 21CS1007</div>
+ </div>
+ <div class="card">
+ <div class="avatar">AR</div>
+ <div class="name">Ansh</div>
+ <div class="detail">B.Tech - IT</div>
+ <div class="detail">Roll No: 21IT1012</div>
+ </div>
+ <div class="card">
+ <div class="avatar">AR</div>
+ <div class="name">Ankit</div>
+ <div class="detail">B.Tech - IT</div>
+ <div class="detail">Roll No:</div>
+ </div>
+</div>
+</body>
+</html>
